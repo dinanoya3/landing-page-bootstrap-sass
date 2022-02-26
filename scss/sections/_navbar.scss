@@ -1,0 +1,23 @@
+// use NAMESPACES to use mixins or variables from a module (_custom.scss)
+// the * removes the namespace
+@use "../custom" as *;
+@use "../components/mixins" as *;
+
+.menu {
+  @include gradient;
+  //   nest
+  .navbar-brand {
+    color: $white;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+  }
+  li {
+    padding: 0 0.7rem;
+    a {
+      color: $white !important;
+      text-transform: capitalize;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 600;
+    }
+  }
+}

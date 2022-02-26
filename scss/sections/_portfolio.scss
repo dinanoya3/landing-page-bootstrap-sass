@@ -1,0 +1,69 @@
+@use "../custom" as *;
+@use "../components/mixins" as *;
+
+.portfolio {
+  padding: 4rem 0;
+}
+
+.portfolio-box {
+  position: relative;
+  // 100% of the columns
+  width: 100%;
+  height: 18.5rem;
+  overflow: hidden;
+  margin-bottom: 1.2rem;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .portfolio-info {
+    background-color: rgba($primary, 0.3);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    // left: 0;
+    opacity: 0;
+    transition: all 0.7s;
+
+    // visibility: hidden;
+
+    .caption {
+      text-align: center;
+      @include absoluteCenter;
+      color: $white;
+      h4 {
+        font-family: "Montserrat", sans-serif;
+        text-transform: uppercase;
+        font-weight: bold;
+        // display: block;
+      }
+    }
+  }
+  &:hover {
+    // img {
+    //   //   @include transitionProperty;
+    // }
+    .portfolio-info {
+      opacity: 1;
+    }
+  }
+}
+
+// .filterDiv {
+//   // float: left;
+//   // background-color: #2196f3;
+//   // color: #ffffff;
+//   // width: 100px;
+//   // line-height: 100px;
+//   // text-align: center;
+//   // margin: 2px;
+//   // display: none; /* Hidden by default */
+// }
+
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
